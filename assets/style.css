@@ -63,3 +63,9 @@ ol.funil,ul.modos{list-style:none;padding:0;counter-reset:f;display:grid;gap:8px
 ol.funil li:before{counter-increment:f;content:counter(f);position:absolute;left:11px;top:11px;width:26px;height:26px;border-radius:50%;background:var(--azul);color:#06263d;font-weight:800;font-size:14px;display:grid;place-items:center}
 ol.funil b,ul.modos b{font-weight:800;font-size:16px}ol.funil span,ul.modos span{font-size:14.5px;color:var(--cinza);font-weight:500}
 @media(min-width:760px){.dizer{font-size:21px}}
+.dizer{font-weight:500}.dizer b{font-weight:800;color:#06466f}.dizer.forte b{color:#fff}.nota b{color:var(--ink)}
+.ferr{display:flex;gap:8px;margin:0 0 12px}.fb{flex:1;border:1.5px solid var(--linha);background:#fff;border-radius:8px;padding:9px 10px;font:700 14px Montserrat,sans-serif;color:var(--ink);cursor:pointer}.fb.on{background:var(--azul);border-color:var(--azul);color:#06263d}.fb:focus-visible{outline:3px solid rgba(10,155,245,.4)}
+.bordao .ferr{margin:14px 60px 0 0;position:relative;z-index:1}.bordao .fb{background:transparent;color:#fff;border-color:#55606c}.bordao .fb.on{background:var(--azul);color:#06263d;border-color:var(--azul)}
+.busca{margin:0 0 8px}.busca input{width:100%;font-size:16px}.busca p{margin:10px 2px;font-weight:600;color:var(--cinza)}
+ul.dores{list-style:none;padding:0}ul.dores li{font-size:17px;background:var(--fundo);border-radius:8px;padding:11px 13px;margin:8px 0}
+details.cartao[hidden],.grupofala[hidden]{display:none}
