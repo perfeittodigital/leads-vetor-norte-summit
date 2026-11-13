@@ -21,3 +21,8 @@ ExpiresByType font/woff2 "access plus 1 year"
 ExpiresByType image/png "access plus 7 days"
 ExpiresByType image/jpeg "access plus 7 days"
 </IfModule>
+<IfModule mod_headers.c>
+<FilesMatch "^avatar-.*\.jpg$">
+Header set Access-Control-Allow-Origin "*"
+</FilesMatch>
+</IfModule>
