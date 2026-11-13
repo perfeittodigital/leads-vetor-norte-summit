@@ -6,7 +6,7 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 <FilesMatch "\.(sqlite|sqlite-wal|sqlite-shm|md)$">
 Require all denied
 </FilesMatch>
-<FilesMatch "^(lib|roteiro|guia|apresentacao|instagram)\.php$">
+<FilesMatch "^(lib|roteiro|falas|guia|apresentacao|instagram)\.php$">
 Require all denied
 </FilesMatch>
 <IfModule mod_headers.c>

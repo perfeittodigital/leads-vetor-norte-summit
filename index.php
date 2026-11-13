@@ -104,7 +104,7 @@ if ($p === 'csv' && gestor()) {
 if ($p === 'apresentacao') { require __DIR__ . '/apresentacao.php'; exit; }
 
 $msg = $_SESSION['msg'] ?? ''; unset($_SESSION['msg']);
-$titulos = ['login' => 'Entrar', 'novo' => 'Novo lead', 'leads' => 'Leads', 'painel' => 'Painel', 'material' => 'Material', 'roteiro' => 'Roteiro', 'guia' => 'Guia do estande', 'instagram' => 'Instagram e WhatsApp', 'usuarios' => 'Usuários', 'senha' => 'Trocar senha', 'editar' => 'Editar lead'];
+$titulos = ['login' => 'Entrar', 'novo' => 'Novo lead', 'leads' => 'Leads', 'painel' => 'Painel', 'material' => 'Material', 'falas' => 'O que falar', 'roteiro' => 'Roteiro', 'guia' => 'Guia do estande', 'instagram' => 'Instagram e WhatsApp', 'usuarios' => 'Usuários', 'senha' => 'Trocar senha', 'editar' => 'Editar lead'];
 if (!isset($titulos[$p])) $p = 'novo';
 ?><!doctype html>
 <html lang="pt-BR">
@@ -239,6 +239,7 @@ if (!isset($titulos[$p])) $p = 'novo';
   <h1>Material do evento</h1>
   <p class="sub">Tudo o que a equipe usa no estande. Abra antes do evento para ficar disponível mesmo com internet fraca.</p>
   <div class="grade">
+    <a class="mat" href="?p=falas" style="border-left:5px solid var(--azul)"><b>🎯 O que falar</b><span>O que a gente faz, o que resolve, fala da entrevista e os produtos. Fonte oficial.</span></a>
     <a class="mat" href="?p=roteiro"><b>🗣 Roteiro de abordagem</b><span>O que falar, em 5 momentos, com respostas para objeções.</span></a>
     <a class="mat" href="?p=apresentacao" target="_blank"><b>🖥 Apresentação em tela cheia</b><span>Slides para mostrar no notebook. Setas para navegar.</span></a>
     <a class="mat" href="?p=apresentacao&auto=1" target="_blank"><b>🔁 Apresentação automática</b><span>Roda sozinha quando ninguém está no estande.</span></a>
@@ -261,6 +262,7 @@ if (!isset($titulos[$p])) $p = 'novo';
     <label>Título<input name="titulo" required></label><label>Link<input name="link" placeholder="https://" required></label><label>Descrição<input name="descricao"></label><button class="bt">Adicionar</button></form><?php endif; ?>
 
 <?php elseif ($p === 'roteiro'): require __DIR__ . '/roteiro.php';
+elseif ($p === 'falas'): require __DIR__ . '/falas.php';
 elseif ($p === 'guia'): require __DIR__ . '/guia.php';
 elseif ($p === 'instagram'): require __DIR__ . '/instagram.php';
 
@@ -279,7 +281,7 @@ elseif ($p === 'usuarios'):
   <a href="?p=novo" class="<?= $p === 'novo' ? 'on' : '' ?>"><i>＋</i>Novo</a>
   <a href="?p=leads" class="<?= $p === 'leads' ? 'on' : '' ?>"><i>☰</i>Leads</a>
   <a href="?p=painel" class="<?= $p === 'painel' ? 'on' : '' ?>"><i>▤</i>Painel</a>
-  <a href="?p=material" class="<?= in_array($p, ['material', 'roteiro', 'guia', 'instagram']) ? 'on' : '' ?>"><i>▶</i>Material</a>
+  <a href="?p=material" class="<?= in_array($p, ['material', 'roteiro', 'falas', 'guia', 'instagram']) ? 'on' : '' ?>"><i>▶</i>Material</a>
   <?php if (gestor()): ?><a href="?p=usuarios" class="<?= $p === 'usuarios' ? 'on' : '' ?>"><i>☺</i>Equipe</a><?php endif; ?>
 </nav>
 <footer class="rodape">Perfeitto Digital · <?= e(EVENTO) ?> 2026</footer>
