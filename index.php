@@ -104,7 +104,7 @@ if ($p === 'csv' && gestor()) {
 if ($p === 'apresentacao') { require __DIR__ . '/apresentacao.php'; exit; }
 
 $msg = $_SESSION['msg'] ?? ''; unset($_SESSION['msg']);
-$titulos = ['login' => 'Entrar', 'novo' => 'Novo lead', 'leads' => 'Leads', 'painel' => 'Painel', 'material' => 'Material', 'roteiro' => 'Roteiro', 'guia' => 'Guia do estande', 'usuarios' => 'Usuários', 'senha' => 'Trocar senha', 'editar' => 'Editar lead'];
+$titulos = ['login' => 'Entrar', 'novo' => 'Novo lead', 'leads' => 'Leads', 'painel' => 'Painel', 'material' => 'Material', 'roteiro' => 'Roteiro', 'guia' => 'Guia do estande', 'instagram' => 'Instagram e WhatsApp', 'usuarios' => 'Usuários', 'senha' => 'Trocar senha', 'editar' => 'Editar lead'];
 if (!isset($titulos[$p])) $p = 'novo';
 ?><!doctype html>
 <html lang="pt-BR">
@@ -243,6 +243,7 @@ if (!isset($titulos[$p])) $p = 'novo';
     <a class="mat" href="?p=apresentacao" target="_blank"><b>🖥 Apresentação em tela cheia</b><span>Slides para mostrar no notebook. Setas para navegar.</span></a>
     <a class="mat" href="?p=apresentacao&auto=1" target="_blank"><b>🔁 Apresentação automática</b><span>Roda sozinha quando ninguém está no estande.</span></a>
     <a class="mat" href="?p=guia"><b>📋 Guia do estande</b><span>O que levar, como se comportar, fotos e rotina dos dois dias.</span></a>
+    <a class="mat" href="?p=instagram"><b>📸 Instagram e WhatsApp</b><span>Posts, legendas, vídeos verticais, fotos de perfil e bio.</span></a>
     <a class="mat" href="assets/banner-vetor-norte-summit.pdf" target="_blank"><b>🖼 Banner do evento</b><span>Arte aprovada, 71 x 91 cm, em PDF.</span></a>
     <a class="mat" href="assets/qr-whatsapp.svg" target="_blank"><b>📱 QR code do WhatsApp</b><span>Leva ao WhatsApp da Perfeitto Digital com mensagem pronta.</span></a>
   </div>
@@ -261,6 +262,7 @@ if (!isset($titulos[$p])) $p = 'novo';
 
 <?php elseif ($p === 'roteiro'): require __DIR__ . '/roteiro.php';
 elseif ($p === 'guia'): require __DIR__ . '/guia.php';
+elseif ($p === 'instagram'): require __DIR__ . '/instagram.php';
 
 elseif ($p === 'usuarios'):
   if (!gestor()) { echo '<p class="vazio">Só gestores cadastram usuários.</p>'; } else {
@@ -277,7 +279,7 @@ elseif ($p === 'usuarios'):
   <a href="?p=novo" class="<?= $p === 'novo' ? 'on' : '' ?>"><i>＋</i>Novo</a>
   <a href="?p=leads" class="<?= $p === 'leads' ? 'on' : '' ?>"><i>☰</i>Leads</a>
   <a href="?p=painel" class="<?= $p === 'painel' ? 'on' : '' ?>"><i>▤</i>Painel</a>
-  <a href="?p=material" class="<?= in_array($p, ['material', 'roteiro', 'guia']) ? 'on' : '' ?>"><i>▶</i>Material</a>
+  <a href="?p=material" class="<?= in_array($p, ['material', 'roteiro', 'guia', 'instagram']) ? 'on' : '' ?>"><i>▶</i>Material</a>
   <?php if (gestor()): ?><a href="?p=usuarios" class="<?= $p === 'usuarios' ? 'on' : '' ?>"><i>☺</i>Equipe</a><?php endif; ?>
 </nav>
 <footer class="rodape">Perfeitto Digital · <?= e(EVENTO) ?> 2026</footer>

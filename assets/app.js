@@ -37,5 +37,6 @@ $$('[data-contatado]').forEach(function(c){c.addEventListener('change',function(
 $$('[data-zap]').forEach(function(a){a.addEventListener('click',function(){var c=$('[data-contatado="'+a.dataset.zap+'"]');if(c&&!c.checked){c.checked=true;c.dispatchEvent(new Event('change'))}})});
 var dlg=$('#dlg');$$('[data-excluir]').forEach(function(b){b.onclick=function(){dlg.querySelector('[name=id]').value=b.dataset.excluir;dlg.querySelector('h3 span').textContent=b.dataset.nome;dlg.querySelector('[name=confirma]').value='';dlg.showModal()}});
 $$('[data-fechar]').forEach(function(b){b.onclick=function(){b.closest('dialog').close()}});
+$$('[data-copia]').forEach(function(b){b.onclick=function(){var t=document.getElementById(b.dataset.copia).innerText,o=b.textContent;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copiado ✓'}).catch(function(){var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();document.execCommand('copy');a.remove();b.textContent='Copiado ✓'});setTimeout(function(){b.textContent=o},1800)}});
 if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js');
 })();
