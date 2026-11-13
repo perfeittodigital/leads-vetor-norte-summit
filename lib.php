@@ -5,7 +5,7 @@ mb_internal_encoding('UTF-8');
 date_default_timezone_set('America/Sao_Paulo');
 define('DADOS', dirname(__DIR__) . '/dados-leads');
 define('EVENTO', 'Vetor Norte Summit');
-define('V', '9');
+define('V', '10');
 if (!is_dir(DADOS)) { @mkdir(DADOS, 0750, true); @file_put_contents(DADOS . '/.htaccess', "Require all denied\n"); }
 if (!is_dir(DADOS . '/sessoes')) @mkdir(DADOS . '/sessoes', 0750, true);
 $https = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || ($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https';
