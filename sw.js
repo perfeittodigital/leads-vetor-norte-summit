@@ -1,0 +1,7 @@
+var C='pdleads-v5',BASE=['assets/style.css?v=5','assets/slides.css?v=5','assets/app.js?v=5','assets/logo-preta.png','assets/icone-192.png','assets/qr-whatsapp.svg','img/equipe.jpg','assets/montserrat-latin-500-normal.woff2','assets/montserrat-latin-600-normal.woff2','assets/montserrat-latin-700-normal.woff2','assets/montserrat-latin-800-normal.woff2'];
+self.addEventListener('install',function(e){e.waitUntil(caches.open(C).then(function(c){return c.addAll(BASE)}).then(function(){return self.skipWaiting()}))});
+self.addEventListener('activate',function(e){e.waitUntil(caches.keys().then(function(k){return Promise.all(k.filter(function(x){return x!==C}).map(function(x){return caches.delete(x)}))}).then(function(){return self.clients.claim()}))});
+self.addEventListener('fetch',function(e){var r=e.request;if(r.method!=='GET')return;var u=new URL(r.url);if(u.origin!==location.origin)return;
+ if(/\.mp4$/.test(u.pathname)||u.search.indexOf('p=csv')>-1||u.search.indexOf('p=sair')>-1)return;
+ if(/\/(assets|img)\//.test(u.pathname)){e.respondWith(caches.match(r).then(function(m){return m||fetch(r).then(function(x){var k=x.clone();caches.open(C).then(function(c){c.put(r,k)});return x})}));return}
+ e.respondWith(fetch(r).then(function(x){if(x.ok&&!x.redirected){var k=x.clone();caches.open(C).then(function(c){c.put(r,k)})}return x}).catch(function(){return caches.match(r).then(function(m){return m||caches.match('./?p=novo')})}))});

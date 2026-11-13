@@ -1,0 +1,23 @@
+Options -Indexes
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+<FilesMatch "\.(sqlite|sqlite-wal|sqlite-shm|md)$">
+Require all denied
+</FilesMatch>
+<FilesMatch "^(lib|roteiro|guia|apresentacao)\.php$">
+Require all denied
+</FilesMatch>
+<IfModule mod_headers.c>
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "SAMEORIGIN"
+Header set Referrer-Policy "strict-origin-when-cross-origin"
+Header set X-Robots-Tag "noindex, nofollow"
+</IfModule>
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType font/woff2 "access plus 1 year"
+ExpiresByType image/png "access plus 7 days"
+ExpiresByType image/jpeg "access plus 7 days"
+</IfModule>
