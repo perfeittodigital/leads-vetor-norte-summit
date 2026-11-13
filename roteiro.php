@@ -7,7 +7,7 @@
 <section class="bloco"><h2>1. Abertura: crie conexão</h2>
 <p>Fique em pé, na frente da mesa, com um sorriso. Comece com uma pergunta, nunca com a empresa.</p>
 <p class="fala">"Oi, tudo bem? Está gostando do evento? Você tem negócio próprio ou trabalha em uma empresa?"</p>
-<p class="fala">"Que legal. A gente também é pequeno empresário. Trabalhamos com eventos há mais de 15 anos, temos a nossa produtora e já passamos por tudo isso: equipe grande, equipe pequena, o dono fazendo tudo."</p></section>
+<p class="fala">"Que legal. A gente também é pequeno empresário. A nossa produtora de eventos, a Perfeitto Produções, tem mais de 15 anos de mercado, e já passamos por tudo isso: equipe grande, equipe pequena, o dono fazendo tudo."</p></section>
 
 <section class="bloco"><h2>2. Descubra a dor: pergunte e escute</h2>
 <p>Faça uma ou duas perguntas e deixe a pessoa falar. Quem fala mais aqui é ela.</p>
@@ -40,7 +40,7 @@
 <details><summary>"Já uso o WhatsApp Business."</summary><p class="fala">"Ótimo, é o começo. A diferença é que a IA responde, organiza e lembra por você. Posso te mostrar em um minuto?"</p></details>
 <details><summary>"Não tenho tempo para isso."</summary><p class="fala">"É exatamente esse o ponto: é para você ganhar tempo. São 15 minutos, pelo WhatsApp, no horário que for melhor para você."</p></details>
 <details><summary>"Vou pensar."</summary><p class="fala">"Claro. Me deixa seu WhatsApp que eu te mando um resumo e você decide com calma."</p></details>
-<details><summary>"Vocês já têm muitos clientes?"</summary><p class="fala">"A Perfeitto Digital é nova e nasceu de dentro da nossa produtora de eventos, depois de mais de 15 anos nesse mercado. Tudo o que oferecemos a gente usa primeiro no nosso próprio negócio. A gente aplica antes de ensinar."</p></details></section>
+<details><summary>"Vocês já têm muitos clientes?"</summary><p class="fala">"A Perfeitto Digital é nova e trabalha com tecnologia e inteligência artificial há cerca de 3 anos e nasceu de dentro da Perfeitto Produções, a nossa produtora de eventos, que tem mais de 15 anos de mercado. Tudo o que oferecemos a gente usa primeiro no nosso próprio negócio. A gente aplica antes de ensinar."</p></details></section>
 
 <section class="bloco"><h2>Regras de ouro</h2>
 <ul><li>Escute mais do que fala.</li><li>Uma dor, uma solução. Não apresente tudo.</li><li>Nunca fale preço nem prometa resultado em número.</li><li>Não invente cliente, depoimento ou prazo.</li><li>Todo contato vira lead cadastrado na hora, mesmo que só com o nome e o WhatsApp.</li><li>Agradeça sempre: <span class="fala">"Obrigado pela conversa, foi um prazer."</span></li></ul></section>
